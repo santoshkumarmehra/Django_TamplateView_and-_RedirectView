@@ -21,13 +21,17 @@ from school import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.Home.as_view(), name='home'),
-    # path('', views.TemplateView.as_view(template_name='school/home.html'), name='home'),
+    path('', views.TemplateView.as_view(template_name='school/home.html'), name='home'),
     # path('', views.Home.as_view(), name='home'),
     # path('<int:pk>', views.Home.as_view(), name='home'),
     # path('home/<int:pk>/', views.Home.as_view(), name='home'),
 
-    path('', views.TemplateView.as_view(template_name='school/home.html'), name='ghar'),
-    path('home/', views.RedirectView.as_view(url = '/'), name='home'),
-    path('index/', views.RedirectView.as_view(url = '/'), name='index'),
+    # path('', views.TemplateView.as_view(template_name='school/home.html'), name='ghar'),
+    # path('home/', views.RedirectView.as_view(url = '/'), name='home'),
+    # path('index/', views.RedirectView.as_view(pattern_name='home'), name='index'),
+
+    path('chalo/<int:pk>/', views.Home.as_view(), name='chalo'),
+    path('<int:pk>/', views.TemplateView.as_view
+         (template_name='school/home.html'), name='modhome'),
 
 ]

@@ -3,8 +3,9 @@ from django.views import View
 from django.views.generic.base import TemplateView, RedirectView
 
 
-
-
+class Home(RedirectView):
+    # url = '/'
+    pattern_name = 'modhome'
 
 
 
